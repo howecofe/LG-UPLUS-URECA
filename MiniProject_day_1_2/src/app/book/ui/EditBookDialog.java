@@ -16,11 +16,9 @@ import app.book.dto.Book;
 public class EditBookDialog extends JDialog {
 	private JTextField bookIdField, bookNameFiled, publisherField, priceField;
 	private JButton updateButton, deleteButton;
-	private DefaultTableModel tableModel;
 	
 	public EditBookDialog(BookManager parent, DefaultTableModel tableModel, int rowIndex) {
-		this.tableModel = tableModel;
-		
+		setTitle("Book Edit Dialog");
 		setSize(300, 200);
 		setLayout(new BorderLayout(5, 2));
 		setLocationRelativeTo(parent); // 부모에 맞게

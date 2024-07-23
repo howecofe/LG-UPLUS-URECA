@@ -16,11 +16,9 @@ import app.book.dto.Book;
 public class AddBookDialog extends JDialog {
 	private JTextField bookIdField, bookNameFiled, publisherField, priceField;
 	private JButton addButton;
-	private DefaultTableModel tableModel;
 	
 	public AddBookDialog(BookManager parent, DefaultTableModel tableModel) {
-		this.tableModel = tableModel;
-		
+		setTitle("Book Add Dialog");
 		setSize(300, 200);
 		setLayout(new GridLayout(5, 2));
 		setLocationRelativeTo(parent); // 부모에 맞게
