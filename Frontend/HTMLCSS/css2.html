@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Document</title>
+    <style>
+      div {
+        border: 20px solid hotpink;
+        width: 400px;
+        height: 300px;
+        padding: 20px;
+      }
+      /* inline tag는 width, height를 줄 수 없다. */
+      span {
+        border: 1px solid aqua;
+        width: 400px;
+        height: 300px;
+      }
+
+      .nanum-pen-script-regular {
+        font-family: "Nanum Pen Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /* unvisited link */
+      a:link {
+        color: red;
+      }
+
+      /* visited link */
+      a:visited {
+        color: green;
+      }
+
+      /* mouse over link */
+      a:hover {
+        color: hotpink;
+      }
+
+      /* selected link */
+      a:active {
+        color: blue;
+      }
+
+      ul.demo {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      ul.demo li {
+        display: inline;
+        cursor: pointer;
+      }
+
+      ul.demo li:hover {
+        color: orangered;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid;
+        padding: 10px;
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+  border-collapse: collapse;
+}
+    </style>
+  </head>
+  <body>
+    <div class="nanum-pen-script-regular">안녕하세요</div>
+    <!-- border-box는 border, padding, content 합쳐서 width, height 사이즈 -->
+    <div style="box-sizing: border-box">안녕하세요</div>
+    <span>안녕하세요.</span>
+    <hr />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-tree-fill"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777z"
+      />
+    </svg>
+    <hr />
+    <a href="#">링크</a>
+    <hr />
+    <ul class="demo">
+      <li>Coffee</li>
+      |
+      <li>Tea</li>
+      |
+      <li>Coca Cola</li>
+    </ul>
+    <hr />
+    <table>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+      </tr>
+    </table>
+  </body>
+</html>
