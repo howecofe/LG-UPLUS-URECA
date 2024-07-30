@@ -1,0 +1,1 @@
+document.querySelector("#myDiv").innerHTML = '<h1>Defer Test</h1>';

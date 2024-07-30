@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- javascript에서 변수, 함수 등은 선언 전에 선처리된다. -->
+     <script>
+
+        // javascript hoisting은 선언만 처리, 초기화(할당)는 처리 X
+        // var hoisting: undefined
+        // let, const hoisting: not initialized (mark) - hoisting은 되는데 사용 시점에 error
+
+        // a 변수를 선언 전에 사용 => 선언 => 값 할당
+        console.log(a); // undefined <= error X
+        var a = 10;
+        console.log(a);
+
+        console.log(b); // Uncaught ReferenceError: Cannot access 'b' before initialization
+        let b = 20;
+        conosle.log(b);
+     </script>
+</body>
+</html>

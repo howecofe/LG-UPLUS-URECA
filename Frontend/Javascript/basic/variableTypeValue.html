@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- undefined, typeof -->
+     <script>
+
+        var a; // 값이 지정되지 않은 상태
+        console.log(a); // undefined
+
+        var b = null; // 객체를 가리키는 변수이나, 아직 객체를 지정 X
+        console.log(b); // null
+
+        console.log(a == b); // true. == : 값만 비교 (undefined와 null은 같은 value)
+
+        console.log(a === b); // false. === : 값 & 타입 비교
+
+        console.log(typeof a); // undefined
+        console.log(typeof b); // object
+        
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // object {}
+        let student = {name: "홍길동", major: "컴퓨터공학"};
+        console.log(student); // 객체 전체 출력
+        console.log(student.name); // 객체 property 출력
+        console.log(student["name"]);
+
+        // 객체 property 추가
+        student.phone = "010-1111-1111";
+        console.log(student);
+
+        // 객체 property 삭제
+        delete student.major;
+        console.log(student);
+
+        // Array []
+        let students = [{name: "홍길동", major: "컴퓨터공학"}, {name: "이길동", major: "수학"}, {name: "삼길동"}, 4];
+        console.log(students);
+        students.push({name: "사길동", major: "국문학"});
+        console.log(students);
+        let currStudent = students.pop(); // 뒤쪽에서 꺼낸다.
+        console.log(currStudent);
+        console.log(students);
+        
+    </script>
+</body>
+</html>

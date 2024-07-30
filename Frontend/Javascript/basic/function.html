@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function
+
+        // #1 normal
+        function add_1(a, b) {
+            // 리턴이 없으면 .... 종료하면 된다.
+            return a + b;
+        }
+        console.log(add_1(10, 20));
+
+        // #2 variable
+        const add_2 = function(a, b) {
+            return a + b;
+        }
+        console.log(add_2(10, 20));
+
+        // #3 new Function
+        const add_3 = new Function("a", "b", "return a + b");
+        console.log(add_3(10, 20));
+
+        // variable 이용한 function 생성 활용
+        // #1: function을 parameter로 이용
+        function add_4(a, b, func) { // func: function을 받는 parameter
+            return func(a, b);
+        }
+        console.log(add_4(10, 20, add_2));
+
+        // return type으로 function
+        function myFunc() {
+            const add_5 = function(a, b) {
+                return a + b;
+            }
+            return add_5;
+
+            // return function(a, b) {
+            //     return a + b;
+            // }
+        }
+
+        const addFunc = myFunc();
+        console.log(addFunc(40, 20));
+
+        // javascript function
+        // 1. variable
+        // 2. paremeter
+        // 3. return
+    </script>
+</body>
+</html>

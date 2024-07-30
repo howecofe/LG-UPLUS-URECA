@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arrow function
+        let print = (a) => console.log(a);
+        print(1);
+        print("arrow function 1");
+
+        // 파라미터가 1개: () 생략
+        let print_2 = a => console.log(a);
+        print_2(2);
+        print("arrow function 2");
+
+        // 파라미터가 없다.: () =>
+        let print_3 = () => console.log("no params");
+        print_3();
+
+        // 여러 statement {}
+        let print_4 = () => {
+            console.log("statement 1");
+            console.log("statement 2");
+            console.log("statement 3");
+        }
+        print_4();
+
+        // return
+        let ret_print = (a, b) => {
+            console.log(a, b);
+            return a + b;
+        }
+
+        console.log(ret_print(3, 4));
+
+        // return 1개만 처리
+        // let ret_print_2 = (a, b) => {
+        //     return a + b;
+        // }
+        let ret_print_2 = (a, b) => a + b;
+        console.log(ret_print_2(4, 5));
+        
+        // 주의! this
+        // function이 object의 property
+        let num = 10;
+
+        const obj = {
+            num: 5,
+            print: function(){
+                console.log(num); // obj 밖 scope에서 찾는다.
+                console.log(this.num);
+            },
+            print_2: () => { // arrow function은 this 포함 X, arrow function에서 this는 부모 객체
+                console.log(num); // obj 밖 scope에서 찾는다.
+                console.log(this.num); // undefined
+                console.log(this);
+            }
+        }
+
+        obj.print();
+        obj.print_2();
+
+
+
+
+
+    </script>
+</body>
+</html>
