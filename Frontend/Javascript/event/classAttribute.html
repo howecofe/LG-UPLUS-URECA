@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #shape {
+            width: 400px;
+            height: 400px;
+            border: 1px solid lightsalmon;
+            cursor: pointer;
+        }
+        .circle {
+            border-radius: 50%;
+        }
+        .rect {
+            border-radius: 0%;
+        }
+        .rounded-rect {
+            border-radius: 15%;
+        }
+    </style>
+</head>
+<body>
+    <!-- event에 따라 css를 변경해야 하면, 직접 js로 css 처리하지 말고 되도록 class로 처리 -->
+    <div id="shape"></div>
+    <hr>
+    <!-- "data-" : 사용자 정의 attr -->
+    <button id="btnCircle" data-click-count="0">circle</button>
+    <button id="btnRect" data-click-count="0">rectangle</button>
+    <button id="btnRoundedRect" data-click-count="0">rounded-rectangle</button>
+    <script>
+        const shape = document.querySelector("#shape");
+
+        document.querySelector("#btnCircle").addEventListener("click", (e) => {
+            shape.classList.remove("rect");
+            shape.classList.remove("rounded-rect");
+            shape.classList.add("circle");
+            e.target.setAttribute("data-click-count", parseInt(e.target.getAttribute("data-click-count")) + 1);
+        });
+
+        document.querySelector("#btnRect").addEventListener("click", (e) => {
+            shape.classList.remove("circle", "rounded-rect");
+            shape.classList.add("rect");
+            e.target.setAttribute("data-click-count", parseInt(e.target.getAttribute("data-click-count")) + 1);
+        });
+
+        document.querySelector("#btnRoundedRect").addEventListener("click", (e) => {
+            shape.classList.remove("circle", "rect");
+            shape.classList.add("rounded-rect");
+            e.target.setAttribute("data-click-count", parseInt(e.target.getAttribute("data-click-count")) + 1);
+        });
+    </script>
+</body>
+</html>

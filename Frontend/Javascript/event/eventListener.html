@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h4 id="title">제목입니다.</h4>
+        <p id="content">내용입니다.</p>
+        <hr>
+        <button onclick="func_1();">제목 변경</button> <!-- #1. inline event handler -->
+        <button id="btn_2">내용 변경</button>
+        <button id="btn_3">테두리 변경</button>
+    </div>
+
+    <script>
+        // 다양하게 발생되는 event에 대해서 필요에 따라 처리자 제공
+        // event -> 처리자에게 전달 -> 처리자가 처리
+        // event target <= event를 발생시킨 element
+
+        function func_1() {
+            document.querySelector("#title").innerText = "제목이 변경되었습니다.";
+        }
+
+        // #2. onclick
+        document.querySelector("#btn_2").onclick = function() {
+            document.querySelector("#content").innerText = "내용이 변경되었습니다.";
+        }
+        
+        // #3. addEventListener() callback
+        document.querySelector("#btn_3").addEventListener("click", function() {
+            document.querySelector("#container").style.border = "1px solid blue";
+        }); // 파라미터로 콜백함수 전달
+
+    </script>
+</body>
+</html>
