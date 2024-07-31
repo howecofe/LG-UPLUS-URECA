@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 구조 분해 할당
+        // object, array의 구조를 그대로 유지하는 것이 아니라,
+        // object의 property 또는 array의 index 기반으로 분해하여 다른 변수에 할당
+
+        // {
+        //     let nums = [1, 2, 3, 4, 5];
+        //     let a = nums[0];
+        //     let b = nums[1];
+        // }
+
+        // {
+        //     let nums = [1, 2, 3, 4, 5];
+        //     let [a, b, c, d, e] = nums;
+        //     console.log(a, b, c, d, e);
+        // }
+
+        // {
+        //     let nums = [1, 2, 3, 4, 5];
+        //     let [a, b, c] = nums;
+        //     console.log(a, b, c);
+        // }
+
+        // {
+        //     let nums = [1, 2, 3, 4, 5];
+        //     let [a, b, c, ...d] = nums; // rest operator
+        //     console.log(a, b, c, d);
+        // }
+
+        // {
+        //     let [a, b, c = 10] = [1, 2];
+        //     console.log(a, b, c);
+        // }
+
+        // {
+        //     let a = 'A';
+        //     let b = 'B';
+
+        //     // swap
+        //     [a, b] = [b, a]; // 오른쪽은 b, a로 구성된 배열, 왼쪽은 구조분해할당 구조
+        //     console.log(a, b);
+        // }
+
+        // {
+        //     let a = 'A';
+        //     let b = 'B';
+        //     let c = 'C'; 
+
+        //     // swap
+        //     [b, c, a] = [a, b, c];
+        //     console.log(a, b, c);
+        // }
+
+        {
+            let o1 = { name: "홍길동", phone: "010-1111-1111", age: 30 };
+            let o2 = { phone: "010-2222-2222", age: 20 };
+            let o3 = { phone: "010-3333-3333" };
+
+            let { a, b } = o1;
+            console.log(a, b); // 오른쪽의 property명과 a, b 변수명이 달라서 undefined 할당
+        }
+
+        {
+            let o1 = { name: "홍길동", phone: "010-1111-1111", age: 30 };
+
+            let { name, age } = o1;
+            console.log(name, age);
+        }
+
+        // 복잡한 구조의 객체에서 필요한 일부 항목만 필요한 경우 <= 백엔드에서 data를 처리
+        {
+            let o1 = {
+                name: "홍길동",
+                phone: "010-1111-1111",
+                age: 30,
+                hobby: {
+                    count: 10, 
+                    names: ['축구', '독서']
+                }
+            };
+
+            let { hobby } = o1;
+            console.log(hobby);
+        }
+
+        // async function getJson() {
+        //     let response = await fetch("./fetchResult.json");
+        //     // console.log(response);
+        //     let data = await response.json(); // json 객체로 만들어진다.
+        //     // console.log(data);
+
+        //     let {members} = data;
+        //     console.log(members);
+        // }
+
+        async function getJson() {
+            let response = await fetch("./fetchResult.json");
+            // console.log(response);
+            let {members} = await response.json(); // json 객체로 만들어진다.
+            console.log(members);
+        }
+
+        getJson();
+
+    </script>
+
+</body>
+
+</html>

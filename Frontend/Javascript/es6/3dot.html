@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ... (3 Dot) 역할
+        // 1. rest operator (나머지를 받아 주는...)
+        {
+            let obj = {a: 1, b: 2, c: 3};
+            let obj2 = obj;
+            console.log(obj2);
+            obj.b = 4;
+            console.log(obj2);
+        }
+        
+        {
+            let obj = {a: 1, b: 2, c: 3};
+            let {...obj2} = obj; // 객체 복사
+            console.log(obj2);
+            obj.b = 4;
+            console.log(obj2);
+        }
+
+        {
+            let obj = {a: 1, b: 2, c: 3, d: "4"};
+            let {a, b, ...obj2} = obj; // destructuring (구조 분해 할당)
+            console.log(a, b, obj2);
+        }
+
+        {
+            let arr = ['a', 'b', 'c', 'd', 'e'];
+            let [a, c, f, ...arr2] = arr; // destructuring (구조 분해 할당)
+            console.log(a, c, f, arr2);
+        }
+
+        // 2. spread operator (합치면서 덮어쓰는...)
+        {
+            let o1 = {name: "홍길동", phone: "010-1111-1111", age: 30};
+            let o2 = {phone: "010-2222-2222", age: 20};
+            let o3 = {phone: "010-3333-3333"};
+
+            let o4 = {...o1, ...o2};
+            console.log(o4);
+
+            let o5 = {...o2, ...o1};
+            console.log(o5);
+
+            let o6 = {...o2, ...o1, ...o3};
+            console.log(o6);
+        }
+
+        {
+            // array : 덮어쓰는 것 없이 추가
+            let nums = [1, 2, 3, 4, 5];
+            let nums2 = [3, 4, 5, 6, 7];
+            let nums3 = [...nums, ...nums2];
+            console.log(nums3);
+            
+            // 배열을 합칠 때는 아래처럼 덧셈 연산으로 하면 안 된다. 이는 string
+            let nums4 = nums + nums2;
+            console.log(nums4);
+            console.log(typeof nums4); // string
+        }
+
+        
+    
+    </script>
+</body>
+</html>
